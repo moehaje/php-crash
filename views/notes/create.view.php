@@ -4,7 +4,7 @@
 
     <main>
         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-            <form method="POST" class="bg-white mt-10 p-6 rounded-md">
+            <form method="POST" action="/notes" class="bg-white mt-10 p-6 rounded-md">
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
