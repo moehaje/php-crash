@@ -54,23 +54,9 @@ class Router {
     public function route($uri, $method) {
         foreach ($this->routes as $route) {
             if ($route['uri'] == $uri && $route['method'] == strtoupper($method)) {
-                // apply the middleware
-                // 1st way
-//              if ($route['middleware'] === 'guest') {
-//                  (new Guest)->handle();
-//               }
-//               if ($route['middleware'] === 'auth') {
-//                   (new Auth)->handle();
-//               }
-                // 2nd better way
-//              if ($route['middleware']) {
-//                  $middleware = Middleware::MAP[$route['middleware']];
-//                  (new $middleware)->handle();
-//              }
-                // 3rd better and cleaner way
                 Middleware::resolve($route['middleware']);
 
-                return require base_path($route['controller']);
+                return require base_path('Http/controllers/' . $route['controller']);
             }
         }
 
