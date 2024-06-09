@@ -3,7 +3,7 @@
 namespace Core;
 
 class Authenticator {
-    public function attempt($username, $password) {
+    public function attempt($email, $password) {
         // Find the user.
         $user = App::resolve('Core\Database')
             ->query('select * from users where email = :email',
@@ -36,10 +36,6 @@ class Authenticator {
     }
 
     public function logout() {
-        $_SESSION = [];
-        session_destroy();
-
-        $params = session_get_cookie_params();
-        setcookie('PHPSESSID', '', time() - 3600, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+        Session::destroy();
     }
 }

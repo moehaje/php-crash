@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 session_start();
 
 const BASE_PATH = __DIR__ . '/../';
@@ -23,18 +25,5 @@ $method = isset($_POST['_method']) ? $_POST['_method'] : $_SERVER['REQUEST_METHO
 
 $router->route($uri, $method);
 
-
-
-
-
-
-
-
-
-
-//$id = $_GET['id'];
-//// letting the id unknown,
-//$query = "select * from posts where id = :id"; // Don't ever ever ever accept user input and inline it as a part of the (database query)!
-//// and pass it as a parameter in the query method
-//$posts = $db->query($query, [':id' => $id])->fetch();
-//// to keep it separately, and secure!
+// Clear flash data
+Session::unflash();
