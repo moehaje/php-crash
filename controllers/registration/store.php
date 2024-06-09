@@ -19,7 +19,7 @@ if (!Validator::email($email)) {
     $errors['email'] = 'Please enter a valid email address';
 }
 
-if (!Validator::string($email, 7, 255)) {
+if (!Validator::string($password, 7, 255)) {
     $errors['password'] = 'Please enter a password at least 7 characters long';
 }
 
@@ -50,9 +50,7 @@ if ($user) {
     ]);
 
     // mark that the user has logged in!
-    $_SESSION['user'] = [
-        'email' => $email,
-    ];
+    login($user);
 
     header('location: /');
     exit();
