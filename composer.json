@@ -6,11 +6,21 @@
             "email": "91034104+moehaje@users.noreply.github.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^11.10"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "Core/",
             "Http\\": "Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
