@@ -1,0 +1,16 @@
+{
+    "name": "mohammedhaje/php-crash",
+    "authors": [
+        {
+            "name": "Moe Haje",
+            "email": "91034104+moehaje@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
